@@ -66,10 +66,10 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/lattice-org/lattice"
-Documentation = "https://lattice-org.github.io/lattice"
-Repository = "https://github.com/lattice-org/lattice"
-Issues = "https://github.com/lattice-org/lattice/issues"
+Homepage = "https://github.com/JiwaniZakir/lattice"
+Documentation = "https://JiwaniZakir.github.io/lattice"
+Repository = "https://github.com/JiwaniZakir/lattice"
+Issues = "https://github.com/JiwaniZakir/lattice/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/lattice"]
@@ -106,3 +106,21 @@ python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = [
+    "z3.*",
+    "torch.*",
+    "networkx.*",
+    "opentelemetry.*",
+    "litellm.*",
+    "tiktoken.*",
+    "structlog.*",
+    "tenacity.*",
+    "aiofiles.*",
+    "redis.*",
+]
+ignore_missing_imports = true
+
+[tool.coverage.report]
+fail_under = 85

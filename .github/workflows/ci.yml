@@ -26,7 +26,7 @@ jobs:
       - name: Lint with ruff
         run: ruff check src/ tests/
       - name: Type check with mypy
-        run: mypy src/lattice/ --ignore-missing-imports
+        run: mypy src/lattice/
 
   test:
     runs-on: ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       - name: Run tests
         run: pytest tests/ -v --timeout=60 -m "not integration" --tb=short
       - name: Run tests with coverage
-        run: pytest tests/ -v --cov=lattice --cov-report=xml -m "not integration"
+        run: pytest tests/ -v --cov=lattice --cov-report=xml --cov-fail-under=85 -m "not integration"
       - name: Upload coverage
         uses: codecov/codecov-action@v4
         with:
