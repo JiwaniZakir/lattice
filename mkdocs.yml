@@ -1,0 +1,38 @@
+site_name: Lattice
+site_description: Adaptive Multi-Agent Orchestration Framework
+site_url: https://JiwaniZakir.github.io/lattice
+repo_url: https://github.com/JiwaniZakir/lattice
+repo_name: JiwaniZakir/lattice
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+
+nav:
+  - Home: index.md
