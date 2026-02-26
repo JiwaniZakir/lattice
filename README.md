@@ -281,6 +281,9 @@ python examples/quickstart.py
 # Install dev dependencies
 pip install -e ".[dev]"
 
+# Install pre-commit hooks (run once after cloning)
+pre-commit install
+
 # Run tests
 pytest tests/ -v
 
@@ -293,6 +296,8 @@ mypy src/lattice/
 # Run a single test file
 pytest tests/test_router.py -v
 ```
+
+Pre-commit hooks run automatically on `git commit` and enforce `ruff check --fix`, `ruff format`, trailing-whitespace cleanup, end-of-file normalization, YAML validity, and large-file detection.
 
 ---
 
